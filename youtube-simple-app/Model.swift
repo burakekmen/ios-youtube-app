@@ -26,12 +26,26 @@ class Model {
         let dataTask = session.dataTask(with: url!) { (data, response, error) in
             
             // herhangi bir hata var mi kontrol ediliyor
-            if error != nil || data != nil{
+            
+            if error != nil || data == nil{
                 return
             }
             
             
             // modelleme yapiliyor
+            let decoder = JSONDecoder()
+            decoder.dateDecodingStrategy = .iso8601
+            
+            do{
+                
+                let response = try decoder.decode(Response.self, from: data!)
+                dump(response)
+                
+            }catch{
+                
+            }
+            
+            
         }
         
         
