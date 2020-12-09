@@ -18,7 +18,7 @@ class Model {
     var delegate : ModelDelegate?
     
     func getVideos(){
-        
+        	
         // url olusturuldu
         let url = URL(string: Constants.API_URL)
         
