@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="youtube_simple_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Vcp-hp-1zP">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="VideoCell" id="yoe-R8-LvR" customClass="VideoTableViewCell" customModule="youtube_simple_app" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="303"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yoe-R8-LvR" id="txA-y6-p8c">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="303"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="GWJ-ho-6wz">
+                                                    <rect key="frame" x="10" y="10" width="394" height="283"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="FNf-Fk-4ah">
+                                                            <rect key="frame" x="0.0" y="0.0" width="394" height="221.5"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" secondItem="FNf-Fk-4ah" secondAttribute="height" multiplier="1280:720" id="ZzA-yf-c84"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ipS-SB-QFZ">
+                                                            <rect key="frame" x="0.0" y="231.5" width="394" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qfi-1g-Fn8">
+                                                            <rect key="frame" x="0.0" y="262" width="394" height="21"/>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="GWJ-ho-6wz" firstAttribute="top" secondItem="txA-y6-p8c" secondAttribute="top" constant="10" id="3Vm-6s-92r"/>
+                                                <constraint firstItem="GWJ-ho-6wz" firstAttribute="leading" secondItem="txA-y6-p8c" secondAttribute="leading" constant="10" id="Rov-YK-9Yd"/>
+                                                <constraint firstAttribute="bottom" secondItem="GWJ-ho-6wz" secondAttribute="bottom" constant="10" id="oNk-5s-b2I"/>
+                                                <constraint firstAttribute="trailing" secondItem="GWJ-ho-6wz" secondAttribute="trailing" constant="10" id="t48-BH-HJh"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="dateLabel" destination="Qfi-1g-Fn8" id="paX-4H-zCc"/>
+                                            <outlet property="thumbnailImageView" destination="FNf-Fk-4ah" id="66M-5g-scn"/>
+                                            <outlet property="titleLabel" destination="ipS-SB-QFZ" id="heQ-WE-fAQ"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="mYT-Fx-bBg"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Vcp-hp-1zP" secondAttribute="bottom" id="0mm-T1-Xie"/>
+                            <constraint firstItem="Vcp-hp-1zP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Lmp-nK-pCA"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Vcp-hp-1zP" secondAttribute="trailing" id="Nvy-vS-wxg"/>
+                            <constraint firstItem="Vcp-hp-1zP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Oxb-eS-El8"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="Vcp-hp-1zP" id="bph-ke-tda"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="133" y="139"/>
+        </scene>
+    </scenes>
+</document>
