@@ -41,9 +41,7 @@ class VideoTableViewCell: UITableViewCell {
         self.titleLabel.text = video?.title
         
         // date modellendi
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "EEEE, MMM d, yyyy"
-        self.dateLabel.text = dateFormatter.string(from: video!.published)
+        self.dateLabel.text = DateManager.dateFormattedString(video!.published)
         
         // thumbnail modelleniyor
         guard self.video!.thumbnail != "" else {
